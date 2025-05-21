@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comida Saudável - Natural & Fresco</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="alimentacao-saudavel.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo"> <img src="alimentacao-saudavel.png" alt="" width="45px">  Natural & Fresco</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#" id="btn-cart">Carrinho (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <h2>Comida Saudável para sua Vida</h2>
+        <p>Alimente seu corpo com frescor e qualidade. Produtos naturais e saborosos para seu dia a dia.</p>
+        <a href="#produtos" class="btn-primary">Ver Produtos</a>
+      </div>
+    </section>
+
+    <section id="produtos" class="container produtos-section">
+      <h2>Produtos</h2>
+      <div class="produtos-grid" id="produtos-list">
+        <!-- Produtos serão inseridos via JS -->
+      </div>
+    </section>
+
+    <section id="sobre" class="container sobre-section">
+      <h2>Sobre Nós</h2>
+      <p>Somos apaixonados por comida saudável e natural, selecionando os melhores ingredientes para oferecer produtos frescos e nutritivos para você.</p>
+    </section>
+
+    <section id="contato" class="container contato-section">
+      <h2>Contato</h2>
+      <form id="form-contato">
+        <input type="text" placeholder="Seu nome" required />
+        <input type="email" placeholder="Seu email" required />
+        <textarea placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn-primary">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal do Carrinho -->
+  <div id="cart-modal" class="cart-modal hidden">
+    <div class="cart-content">
+      <button id="close-cart" class="close-btn">&times;</button>
+      <h2>Seu Carrinho</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">
+        <strong>Total:</strong> R$ <span id="cart-total">0.00</span>
+      </div>
+      <button id="btn-checkout" class="btn-primary" disabled>Finalizar Compra</button>
+    </div>
+  </div>
+
+  <!-- Página de Checkout -->
+  <div id="checkout-page" class="checkout-page hidden container">
+    <button id="btn-back" class="btn-back">&larr; Voltar</button>
+    <h2>Finalizar Compra</h2>
+    <div id="checkout-items"></div>
+    <form id="checkout-form">
+      <label>
+        Nome Completo:
+        <input type="text" required />
+      </label>
+      <label>
+        Endereço:
+        <input type="text" required />
+      </label>
+      <label>
+        Telefone:
+        <input type="tel" required />
+      </label>
+      <label>
+        Forma de Pagamento:
+        <select required>
+          <option value="">Selecione</option>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="boleto">Boleto Bancário</option>
+          <option value="pix">PIX</option>
+        </select>
+      </label>
+      <button type="submit" class="btn-primary">Confirmar Pedido</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Natural & Fresco - Comida Saudável</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <section id="checkout-page" class="hidden">
+    <h2>Finalizar Compra</h2>
+    <div id="checkout-items"></div>
+  
+    <form id="checkout-form">
+      <h3>Dados do Cliente</h3>
+      <label>Nome:
+        <input type="text" name="nome" required />
+      </label>
+      <label>Endereço:
+        <input type="text" name="endereco" required />
+      </label>
+      <label>Email:
+        <input type="email" name="email" required />
+      </label>
+  
+      <h3>Pagamento</h3>
+      <label>Forma de Pagamento:
+        <select name="pagamento" required>
+          <option value="">Selecione</option>
+          <option value="pix">PIX</option>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="boleto">Boleto</option>
+        </select>
+      </label>
+  
+      <button type="submit">Confirmar Pedido</button>
+      <button type="button" id="btn-back">Voltar</button>
+    </form>
+  </section>
+  
+</body>
+</html>
