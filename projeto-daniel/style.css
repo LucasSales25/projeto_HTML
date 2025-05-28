@@ -120,8 +120,8 @@ header .container {
 
 .produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit,minmax(179px,10fr));
+  gap: 10px;
 }
 
 .produto-card {
